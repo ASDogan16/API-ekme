@@ -40,6 +40,9 @@ getData()
     //     console.log(data[i].title)
     // }
 
+
+    let sepet = []
+
     data.forEach((urun)=>{
         console.log(urun)
     
@@ -77,6 +80,17 @@ getData()
     btn.textContent = "Add to Card"
 
 
+    btn.addEventListener("click", ()=>{
+        console.log(urun)
+        sepet.push(urun)
+        console.log(sepet)
+
+        let sepetJson = JSON.stringify(sepet)
+        localStorage.setItem("sepet", sepetJson)
+
+    })
+
+    
 
     cardBody.appendChild(cardTitle)
     cardBody.appendChild(cardText)
@@ -92,3 +106,4 @@ getData()
     row.appendChild(col_3)
 })
 })
+
